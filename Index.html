@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mises en Situation : Profils Patients en Audioprothèse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 
+    Chosen Palette: Calm Harmony
+    Application Structure Plan: A tab-based single-page application. A top navigation bar with four colored buttons (Rouge, Jaune, Vert, Bleu) allows the user to switch between four corresponding content cards. This structure is ideal for a training presentation, enabling the trainer to instantly display a specific case study without scrolling. It's clean, interactive, and focuses user attention. One profile is shown by default.
+    Visualization & Content Choices: Report Info: 4 patient profiles. Goal: Inform/Train. Viz/Method: Interactive Cards. Interaction: Click a colored button to show the corresponding card. Justification: Most efficient way to present distinct case studies for quick comparison and presentation. Library/Method: Vanilla JS for click handling, Tailwind CSS for styling and color-coding. Report Info: Context/Behavior/Phrases/Objective. Goal: Detail. Viz/Method: Structured HTML text blocks with headings and lists. Interaction: None beyond reading. Justification: Clear and direct presentation of textual information.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .profile-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .profile-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+        .nav-button.active {
+            transform: scale(1.05);
+            opacity: 1;
+            box-shadow: 0 4px 14px 0 rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">Mises en Situation</h1>
+            <p class="mt-2 text-lg text-slate-600">Gérer les Profils Patients en Audioprothèse</p>
+        </header>
+
+        <nav id="profile-nav" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <button data-profile="rouge" class="nav-button active text-white font-bold py-4 px-2 rounded-lg bg-red-500 hover:bg-red-600">
+                Patient Rouge
+            </button>
+            <button data-profile="jaune" class="nav-button text-slate-900 font-bold py-4 px-2 rounded-lg bg-amber-400 hover:bg-amber-500">
+                Patiente Jaune
+            </button>
+            <button data-profile="vert" class="nav-button text-white font-bold py-4 px-2 rounded-lg bg-emerald-500 hover:bg-emerald-600">
+                Patiente Verte
+            </button>
+            <button data-profile="bleu" class="nav-button text-white font-bold py-4 px-2 rounded-lg bg-sky-500 hover:bg-sky-600">
+                Patient Bleu
+            </button>
+        </nav>
+
+        <main id="profile-container" class="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+            
+            <!-- Cas 1: Patient Rouge -->
+            <div id="rouge-content" class="profile-content active">
+                <h2 class="text-2xl font-bold text-red-600 mb-4">Cas 1 : Le Patient Rouge (Le Commandeur)</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
+                        <p>M. Dubois, 75 ans, ancien chef d'entreprise, vient pour son rendez-vous de contrôle du premier mois. Il entre dans le centre d'un pas décidé, sans attendre qu'on l'invite.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
+                        <p>Il parle fort, regarde à peine l'assistante et tapote sur le comptoir avec impatience. Il semble pressé et insatisfait.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600">
+                            <li>"Bonjour, j'ai rendez-vous. On m'avait dit qu'en un mois, je n'aurais plus de problème, et ce n'est pas le cas."</li>
+                            <li>"Ne me faites pas perdre mon temps. Je veux juste un réglage, et vite."</li>
+                            <li>"Concrètement, qu'est-ce que l'audioprothésiste va faire aujourd'hui pour que ça fonctionne enfin parfaitement ?"</li>
+                            <li>"J'espère que ça va être rapide, j'ai un déjeuner important."</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                        <h3 class="font-bold text-red-800">Objectif pour l'assistante</h3>
+                        <p class="text-red-700 mt-1">Accuser réception de son insatisfaction avec efficacité, le rassurer sur la prise en charge rapide de son problème et le diriger vers la salle sans lui donner l'impression de perdre le contrôle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cas 2: Patiente Jaune -->
+            <div id="jaune-content" class="profile-content">
+                <h2 class="text-2xl font-bold text-amber-600 mb-4">Cas 2 : La Patiente Jaune (La Conquérante)</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
+                        <p>Mme Martin, 72 ans, arrive pour son tout premier rendez-vous. Elle est très dynamique, vêtue de couleurs vives et sourit à tout le monde.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
+                        <p>Elle est très enthousiaste, parle beaucoup de ses activités (club de randonnée, voyages). Elle est fascinée par la technologie et voit l'appareillage comme un gadget qui va lui ouvrir de nouvelles portes.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600">
+                            <li>"Bonjour ! J'ai tellement hâte ! Ma copine m'a dit que ses appareils sont connectés à la télé, c'est vrai ? Vous avez ça ?"</li>
+                            <li>"J'ai vu qu'il y en avait des presque invisibles ! C'est génial, non ? Je veux le top du top !"</li>
+                            <li>"Avec ça, je vais pouvoir entendre le guide pendant les visites de châteaux, ça va me changer la vie !"</li>
+                            <li>"Oh, et est-ce qu'on peut choisir la couleur ?"</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                        <h3 class="font-bold text-amber-800">Objectif pour l'assistante</h3>
+                        <p class="text-amber-700 mt-1">Canaliser son énergie positive, partager son enthousiasme tout en commençant à lui expliquer le cadre plus médical et les étapes du rendez-vous, sans briser son élan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cas 3: Patiente Verte -->
+            <div id="vert-content" class="profile-content">
+                <h2 class="text-2xl font-bold text-emerald-600 mb-4">Cas 3 : La Patiente Verte (La Consensuelle)</h2>
+                 <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
+                        <p>Mme Girard, 82 ans, veuve depuis peu, est accompagnée par sa fille pour un rendez-vous de suivi. Elle semble craintive et un peu perdue.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
+                        <p>Elle parle doucement, n'ose pas s'asseoir tout de suite et cherche constamment le regard approbateur de sa fille. Elle a besoin d'être rassurée sur le plan humain.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600">
+                            <li>"C'est ma fille qui a insisté pour que je vienne... J'ai peur de vous déranger."</li>
+                            <li>"Vous pensez que je m'y habituerai un jour ? C'est encore un peu difficile."</li>
+                            <li>"L'audioprothésiste est toujours aussi patient ? Il est si gentil."</li>
+                            <li>(À sa fille) "Qu'est-ce que tu en penses, toi ? Je devrais lui dire que ça siffle un peu quand je mets mon chapeau ?"</li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg">
+                        <h3 class="font-bold text-emerald-800">Objectif pour l'assistante</h3>
+                        <p class="text-emerald-700 mt-1">Créer un climat de confiance et de sécurité, la rassurer par un ton de voix doux, l'impliquer personnellement dans la conversation et inclure sa fille avec bienveillance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cas 4: Patient Bleu -->
+            <div id="bleu-content" class="profile-content">
+                <h2 class="text-2xl font-bold text-sky-600 mb-4">Cas 4 : Le Patient Bleu (Le Processeur)</h2>
+                <div class="space-y-6">
+                     <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
+                        <p>M. Lefebvre, 78 ans, ancien ingénieur, se présente pour un rendez-vous d'information. Il tient un carnet et un stylo à la main, ainsi qu'une brochure de votre enseigne, abondamment annotée.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
+                        <p>Il est très formel, peu souriant, et pose immédiatement des questions très précises. Il a besoin de comprendre chaque détail technique et factuel avant de poursuivre.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600">
+                            <li>"Bonjour. J'ai lu sur votre brochure que le modèle Z-500 possède 12 canaux de réglage. Pouvez-vous me confirmer les spécifications exactes ?"</li>
+                            <li>"Quel est le protocole précis pour les rendez-vous de suivi durant les deux premières années ?"</li>
+                            <li>"J'aimerais comparer la courbe de performance de cet appareil avec celle du modèle de la marque concurrente. Avez-vous ces données ?"</li>
+                            <li>"Je ne prendrai aucune décision aujourd'hui. Je suis ici uniquement pour recueillir des informations."</li>
+                        </ul>
+                    </div>
+                    <div class="bg-sky-50 border-l-4 border-sky-500 p-4 rounded-r-lg">
+                        <h3 class="font-bold text-sky-800">Objectif pour l'assistante</h3>
+                        <p class="text-sky-700 mt-1">Répondre de manière factuelle et précise, sans chercher à créer un lien émotionnel. Lui fournir de la documentation, respecter son besoin d'analyse et lui présenter le processus de manière structurée.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const nav = document.getElementById('profile-nav');
+        const contents = document.querySelectorAll('.profile-content');
+        const buttons = document.querySelectorAll('.nav-button');
+
+        nav.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                const profile = e.target.dataset.profile;
+
+                buttons.forEach(button => {
+                    button.classList.remove('active');
+                    if(button.dataset.profile === profile) {
+                        button.classList.add('active');
+                    }
+                });
+
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `${profile}-content`) {
+                        content.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
