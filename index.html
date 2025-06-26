@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mises en Situation : Profils Patients en Audioprothèse</title>
+    <title>Mises en Situation : Profils Patients pour Audioprothésistes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
     <!-- 
     Chosen Palette: Calm Harmony
     Application Structure Plan: A tab-based single-page application. A top navigation bar with four colored buttons (Rouge, Jaune, Vert, Bleu) allows the user to switch between four corresponding content cards. This structure is ideal for a training presentation, enabling the trainer to instantly display a specific case study without scrolling. It's clean, interactive, and focuses user attention. One profile is shown by default.
-    Visualization & Content Choices: Report Info: 4 patient profiles. Goal: Inform/Train. Viz/Method: Interactive Cards. Interaction: Click a colored button to show the corresponding card. Justification: Most efficient way to present distinct case studies for quick comparison and presentation. Library/Method: Vanilla JS for click handling, Tailwind CSS for styling and color-coding. Report Info: Context/Behavior/Phrases/Objective. Goal: Detail. Viz/Method: Structured HTML text blocks with headings and lists. Interaction: None beyond reading. Justification: Clear and direct presentation of textual information.
+    Visualization & Content Choices: Report Info: 4 patient profiles for audiologists. Goal: Inform/Train. Viz/Method: Interactive Cards. Interaction: Click a colored button to show the corresponding card. Justification: Most efficient way to present distinct case studies for quick comparison and presentation. Library/Method: Vanilla JS for click handling, Tailwind CSS for styling and color-coding. Report Info: Context/Role/Behavior/Phrases/Objective. Goal: Detail. Viz/Method: Structured HTML text blocks with headings and lists. Interaction: None beyond reading. Justification: Clear and direct presentation of textual information.
     CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
     -->
     <style>
@@ -48,7 +48,7 @@
     <div class="container mx-auto px-4 py-8 md:py-12">
         <header class="text-center mb-8 md:mb-12">
             <h1 class="text-3xl md:text-4xl font-bold text-slate-900">Mises en Situation</h1>
-            <p class="mt-2 text-lg text-slate-600">Gérer les Profils Patients en Audioprothèse</p>
+            <p class="mt-2 text-lg text-slate-600">Gérer les Profils Patients pour l'Audioprothésiste</p>
         </header>
 
         <nav id="profile-nav" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -74,24 +74,24 @@
                 <div class="space-y-6">
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
-                        <p>M. Dubois, 75 ans, ancien chef d'entreprise, vient pour son rendez-vous de contrôle du premier mois. Il entre dans le centre d'un pas décidé, sans attendre qu'on l'invite.</p>
+                        <p>M. Dubois, 75 ans, ancien chef d'entreprise, est à son rendez-vous de suivi à 1 mois. Il est visiblement insatisfait des premiers résultats et entre dans votre bureau avec une posture de confrontation.</p>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
-                        <p>Il parle fort, regarde à peine l'assistante et tapote sur le comptoir avec impatience. Il semble pressé et insatisfait.</p>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Rôle de l'audioprothésiste</h3>
+                        <p>Vous devez faire les ajustements techniques tout en gérant son mécontentement.</p>
                     </div>
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
                         <ul class="list-disc list-inside space-y-2 text-slate-600">
-                            <li>"Bonjour, j'ai rendez-vous. On m'avait dit qu'en un mois, je n'aurais plus de problème, et ce n'est pas le cas."</li>
-                            <li>"Ne me faites pas perdre mon temps. Je veux juste un réglage, et vite."</li>
-                            <li>"Concrètement, qu'est-ce que l'audioprothésiste va faire aujourd'hui pour que ça fonctionne enfin parfaitement ?"</li>
-                            <li>"J'espère que ça va être rapide, j'ai un déjeuner important."</li>
+                            <li>"J'ai payé une somme considérable pour ces appareils et je n'entends toujours pas correctement au restaurant. Votre promesse n'est pas tenue."</li>
+                            <li>"Arrêtons de tourner autour du pot. Quels réglages allez-vous faire, <strong>maintenant</strong>, pour que ça marche ?"</li>
+                            <li>"Ne me parlez pas de 'temps d'adaptation'. J'ai besoin d'une solution efficace, pas d'excuses."</li>
+                            <li>"Montrez-moi sur votre écran ce que vous modifiez. Je veux comprendre."</li>
                         </ul>
                     </div>
                     <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-red-800">Objectif pour l'assistante</h3>
-                        <p class="text-red-700 mt-1">Accuser réception de son insatisfaction avec efficacité, le rassurer sur la prise en charge rapide de son problème et le diriger vers la salle sans lui donner l'impression de perdre le contrôle.</p>
+                        <h3 class="font-bold text-red-800">Objectif pour l'audioprothésiste</h3>
+                        <p class="text-red-700 mt-1">Garder son calme et son leadership. Valider son problème de manière concise, expliquer clairement le plan d'action pour le réglage, et le faire participer aux décisions pour lui redonner un sentiment de contrôle.</p>
                     </div>
                 </div>
             </div>
@@ -102,24 +102,24 @@
                 <div class="space-y-6">
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
-                        <p>Mme Martin, 72 ans, arrive pour son tout premier rendez-vous. Elle est très dynamique, vêtue de couleurs vives et sourit à tout le monde.</p>
+                        <p>Mme Martin, 72 ans, est à son premier rendez-vous pour choisir son équipement. Elle a déjà vu plein de publicités et d'articles en ligne.</p>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
-                        <p>Elle est très enthousiaste, parle beaucoup de ses activités (club de randonnée, voyages). Elle est fascinée par la technologie et voit l'appareillage comme un gadget qui va lui ouvrir de nouvelles portes.</p>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Rôle de l'audioprothésiste</h3>
+                        <p>Vous devez réaliser l'anamnèse et la guider vers le choix d'appareil le plus pertinent pour ses besoins auditifs, pas seulement pour les gadgets.</p>
                     </div>
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
                         <ul class="list-disc list-inside space-y-2 text-slate-600">
-                            <li>"Bonjour ! J'ai tellement hâte ! Ma copine m'a dit que ses appareils sont connectés à la télé, c'est vrai ? Vous avez ça ?"</li>
-                            <li>"J'ai vu qu'il y en avait des presque invisibles ! C'est génial, non ? Je veux le top du top !"</li>
-                            <li>"Avec ça, je vais pouvoir entendre le guide pendant les visites de châteaux, ça va me changer la vie !"</li>
-                            <li>"Oh, et est-ce qu'on peut choisir la couleur ?"</li>
+                            <li>"J'ai vu qu'il y a des appareils avec intelligence artificielle qui traduisent les langues ! C'est incroyable, je veux ça !"</li>
+                            <li>"On va pouvoir le connecter directement à ma nouvelle télé 8K ? Ça va être une expérience dingue !"</li>
+                            <li>"Mon audiogramme ? Oui, oui, bien sûr... mais parlons des options ! Le streaming direct, ça change tout, non ?"</li>
+                            <li>"Je veux l'appareil le plus puissant, le plus récent, celui qui vient de sortir !"</li>
                         </ul>
                     </div>
                     <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-amber-800">Objectif pour l'assistante</h3>
-                        <p class="text-amber-700 mt-1">Canaliser son énergie positive, partager son enthousiasme tout en commençant à lui expliquer le cadre plus médical et les étapes du rendez-vous, sans briser son élan.</p>
+                        <h3 class="font-bold text-amber-800">Objectif pour l'audioprothésiste</h3>
+                        <p class="text-amber-700 mt-1">Utiliser son enthousiasme comme moteur. Lier les bénéfices technologiques à ses besoins auditifs réels, lui faire essayer des fonctionnalités en direct pour la projeter, et la guider pour que son "coup de cœur" soit aussi un choix médicalement justifié.</p>
                     </div>
                 </div>
             </div>
@@ -130,24 +130,24 @@
                  <div class="space-y-6">
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
-                        <p>Mme Girard, 82 ans, veuve depuis peu, est accompagnée par sa fille pour un rendez-vous de suivi. Elle semble craintive et un peu perdue.</p>
+                        <p>Mme Girard, 82 ans, est à son rendez-vous d'essai, après 15 jours de port de ses premiers appareils. Elle est accompagnée de sa fille, qui est très impliquée.</p>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
-                        <p>Elle parle doucement, n'ose pas s'asseoir tout de suite et cherche constamment le regard approbateur de sa fille. Elle a besoin d'être rassurée sur le plan humain.</p>
+                     <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Rôle de l'audioprothésiste</h3>
+                        <p>Vous devez recueillir son ressenti, souvent teinté d'émotion, et prendre des décisions de réglage en vous assurant de son adhésion (et de celle de sa fille).</p>
                     </div>
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
                         <ul class="list-disc list-inside space-y-2 text-slate-600">
-                            <li>"C'est ma fille qui a insisté pour que je vienne... J'ai peur de vous déranger."</li>
-                            <li>"Vous pensez que je m'y habituerai un jour ? C'est encore un peu difficile."</li>
-                            <li>"L'audioprothésiste est toujours aussi patient ? Il est si gentil."</li>
-                            <li>(À sa fille) "Qu'est-ce que tu en penses, toi ? Je devrais lui dire que ça siffle un peu quand je mets mon chapeau ?"</li>
+                            <li>"Je ne sais pas trop... C'est un peu fort parfois, mais je ne veux pas me plaindre..."</li>
+                            <li>"Ma fille trouve que je ne réponds pas toujours quand elle m'appelle de la cuisine. Vous pensez que c'est de ma faute ?"</li>
+                            <li>(Se tournant vers sa fille) "Et toi, chérie, tu trouves que c'est mieux ? Dis-lui, toi."</li>
+                            <li>"Je veux juste ne plus être un poids pour ma famille. Si vous pensez que c'est le bon réglage pour moi, je vous fais confiance."</li>
                         </ul>
                     </div>
                     <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-emerald-800">Objectif pour l'assistante</h3>
-                        <p class="text-emerald-700 mt-1">Créer un climat de confiance et de sécurité, la rassurer par un ton de voix doux, l'impliquer personnellement dans la conversation et inclure sa fille avec bienveillance.</p>
+                        <h3 class="font-bold text-emerald-800">Objectif pour l'audioprothésiste</h3>
+                        <p class="text-emerald-700 mt-1">Créer une alliance thérapeutique forte. Poser des questions ouvertes et rassurantes, valoriser son ressenti, impliquer activement la fille dans la discussion pour bâtir une décision commune et sécuriser la patiente.</p>
                     </div>
                 </div>
             </div>
@@ -158,24 +158,24 @@
                 <div class="space-y-6">
                      <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Contexte</h3>
-                        <p>M. Lefebvre, 78 ans, ancien ingénieur, se présente pour un rendez-vous d'information. Il tient un carnet et un stylo à la main, ainsi qu'une brochure de votre enseigne, abondamment annotée.</p>
+                        <p>M. Lefebvre, 78 ans, ancien ingénieur, est à l'important rendez-vous d'adaptation et de réglage initial, juste après la pose des appareils.</p>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Comportement</h3>
-                        <p>Il est très formel, peu souriant, et pose immédiatement des questions très précises. Il a besoin de comprendre chaque détail technique et factuel avant de poursuivre.</p>
+                     <div>
+                        <h3 class="font-semibold text-lg mb-2 text-slate-700">Rôle de l'audioprothésiste</h3>
+                        <p>Vous devez effectuer les mesures (in-vivo) et les premiers réglages tout en justifiant chaque étape de votre protocole.</p>
                     </div>
                     <div>
                         <h3 class="font-semibold text-lg mb-2 text-slate-700">Phrases types</h3>
                         <ul class="list-disc list-inside space-y-2 text-slate-600">
-                            <li>"Bonjour. J'ai lu sur votre brochure que le modèle Z-500 possède 12 canaux de réglage. Pouvez-vous me confirmer les spécifications exactes ?"</li>
-                            <li>"Quel est le protocole précis pour les rendez-vous de suivi durant les deux premières années ?"</li>
-                            <li>"J'aimerais comparer la courbe de performance de cet appareil avec celle du modèle de la marque concurrente. Avez-vous ces données ?"</li>
-                            <li>"Je ne prendrai aucune décision aujourd'hui. Je suis ici uniquement pour recueillir des informations."</li>
+                            <li>"Pouvez-vous m'expliquer la différence entre la courbe cible NAL-NL2 et la vôtre ? Pourquoi ce choix ?"</li>
+                            <li>"Je vois que vous ajustez le gain sur les fréquences à 4kHz. De combien de décibels exactement ? Quelle est la justification par rapport à mon audiogramme tonal ?"</li>
+                            <li>"La mesure in-vivo que vous venez de faire montre un écart avec la cible. Comment comptez-vous le corriger précisément ?"</li>
+                            <li>"J'aimerais recevoir un rapport détaillé de tous les réglages effectués aujourd'hui par email."</li>
                         </ul>
                     </div>
                     <div class="bg-sky-50 border-l-4 border-sky-500 p-4 rounded-r-lg">
-                        <h3 class="font-bold text-sky-800">Objectif pour l'assistante</h3>
-                        <p class="text-sky-700 mt-1">Répondre de manière factuelle et précise, sans chercher à créer un lien émotionnel. Lui fournir de la documentation, respecter son besoin d'analyse et lui présenter le processus de manière structurée.</p>
+                        <h3 class="font-bold text-sky-800">Objectif pour l'audioprothésiste</h3>
+                        <p class="text-sky-700 mt-1">Faire preuve de rigueur et de pédagogie technique. Expliquer ce que vous faites avant de le faire, montrer les données à l'écran pour appuyer vos décisions, et répondre précisément à ses questions pour démontrer votre maîtrise et construire une relation basée sur la compétence factuelle.</p>
                     </div>
                 </div>
             </div>
